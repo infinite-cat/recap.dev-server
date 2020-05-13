@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'password'
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  traceman_server:
+    build: .
+    container_name: traceman_server
+    image: traceman/traceman_server:postgres
+    environment:
+      postgresHost: postgres
+      postgresUsername: postgres
+      postgresPassword: password
+      postgresDatabase: postgres
+    ports:
+      - "8081:8081"
+      - "8080:8080"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
