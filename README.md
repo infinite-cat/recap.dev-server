@@ -1,3 +1,15 @@
+## Starting a recap.dev server
+
+### Amazon EC2
+
+The simplest way of starting the recap.dev server on AWS is to start an instance with our AMI.
+
+1. Go to AWS console
+
+2. Go to EC2
+
+3. Click launch and search community AMIs for the latest recap.dev AMI
+
 ## How to integrate
 
 ### Serverless Framework

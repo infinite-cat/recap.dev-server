@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
+echo "updating submodules"
+git pull --recurse-submodules --jobs=10
 echo "building UI"
-(cd ui && yarn build)
+(cd recap.dev-ui && yarn && yarn build)
 echo "building backend"
-(cd backend && yarn build:prod)
-docker-compose build traceman_server
-docker-compose push traceman_server
+(cd recap.dev-backend && yarn && yarn build:prod)
+docker-compose build recap_dev_server
+docker-compose push recap_dev_server

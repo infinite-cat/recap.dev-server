@@ -17,7 +17,6 @@ services:
     restart: unless-stopped
 
   recap_dev_server:
-    build: .
     container_name: recap_dev_server
     image: recapdev/server:0.1-postgres
     environment:
