@@ -74,3 +74,37 @@ or
 ```
   "plugins": ["@recap.dev/babel-plugin"]
 ```
+
+
+## Integrations
+
+### AWS
+
+AWS integration allows pulling CloudWatch logs from your Lambdas.
+
+#### Setup
+
+1. Create and assign IAM role with the following policy to your instance or container:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "logs:Describe*",
+                "logs:Get*",
+                "logs:List*",
+                "logs:StartQuery",
+                "logs:StopQuery",
+                "logs:TestMetricFilter",
+                "logs:FilterLogEvents"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+2. Go to settings in your recap.dev server and enable the ingration.
