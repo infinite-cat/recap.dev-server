@@ -1,3 +1,17 @@
+## Table of Contents
+
+- [Starting a recap.dev server](#starting-a-recapdev-server)
+  * [Amazon EC2](#amazon-ec2)
+- [How to integrate](#how-to-integrate)
+  * [Serverless Framework](#serverless-framework)
+    + [1. Adding simple tracing](#1-adding-simple-tracing)
+    + [2. Adding detailed function tracing](#2-adding-detailed-function-tracing)
+- [Integrations](#integrations)
+  * [AWS](#aws)
+    + [Setup](#setup)
+  * [Slack](#slack)
+    + [Setup](#setup-1)
+
 ## Starting a recap.dev server
 
 ### Amazon EC2
