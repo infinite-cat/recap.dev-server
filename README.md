@@ -1,3 +1,12 @@
+![recap.dev logo](logo.svg)
+
+# recap.dev
+
+recap.dev is an open-source cloud observability solution for modern serverless applications.
+It includes resource access tracking, cost and error analytics, and more.
+
+Our goal is to make it easy and accessible for everyone to find sources of errors, find bottlenecks, and improve overall developer quality of life.
+
 ## Table of Contents
 
 - [Starting a recap.dev server](#starting-a-recapdev-server)

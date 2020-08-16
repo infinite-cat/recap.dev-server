@@ -19,7 +19,7 @@ services:
   recap_dev_server:
     build: .
     container_name: recap_dev_server
-    image: recapdev/server:0.1-postgres
+    image: recapdev/server:0.5-postgres
     environment:
       postgresHost: postgres
       postgresUsername: postgres

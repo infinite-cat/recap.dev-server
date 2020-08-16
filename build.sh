@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "updating submodules"
-git pull --recurse-submodules --jobs=10
+git submodule update --recursive --remote
 echo "building UI"
 (cd recap.dev-ui && yarn && yarn build)
 echo "building backend"
