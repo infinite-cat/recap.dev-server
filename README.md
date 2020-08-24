@@ -31,6 +31,26 @@ The simplest way of starting the recap.dev server on AWS is to start an instance
 
 3. Click launch and search community AMIs for the latest recap.dev AMI
 
+## Upgrading a recap.dev server or running a specific version
+
+recap.dev server is shipped as a docker image or as an AWS AMI.
+
+If you're running a **docker image**, then just use the latest version of the image from our [DockerHub repository](https://hub.docker.com/repository/docker/recapdev/server).
+
+If you're running an **AWS AMI** version of recap.dev server then do the following:
+
+1. SSH into your recap.dev server
+
+2. `cd recap.dev` to go into recap.dev working directory
+
+3. Edit the `docker-compose.yml` file with your favorite command-line editor (vi, vim, nano).
+
+Under the `recap_dev_server` section find the `image` property, set it to be the image you want and save the file.
+
+4. Run `docker-compose pull` to get the image.
+
+5. Run `docker-compose up -d` to start the new version of recap.dev server.
+
 ## How to integrate
 
 ### Serverless Framework
