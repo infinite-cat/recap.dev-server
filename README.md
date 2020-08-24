@@ -1,5 +1,9 @@
 ![recap.dev logo](logo.svg)
 
+
+[Docker Hub](https://hub.docker.com/orgs/recapdev/repositories) | [npm](https://www.npmjs.com/org/recap.dev)
+
+
 recap.dev is an open-source cloud observability solution for modern serverless applications.
 It includes resource access tracking, cost and error analytics, and more.
 
