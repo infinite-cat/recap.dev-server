@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/ArsenyYankovsky/recap.dev-server" target="_blank" align="center">
-    <img src="logo.svg">
+    <img src="logo.svg" width="300">
   </a>
   <br />
 </p>
