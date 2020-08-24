@@ -9,6 +9,7 @@ Our goal is to make it easy and accessible for everyone to find sources of error
 
 - [Starting a recap.dev server](#starting-a-recapdev-server)
   * [Amazon EC2](#amazon-ec2)
+- [Upgrading a recap.dev server or running a specific version](#upgrading-a-recapdev-server-or-running-a-specific-version)
 - [How to integrate](#how-to-integrate)
   * [Serverless Framework](#serverless-framework)
     + [1. Adding simple tracing](#1-adding-simple-tracing)
