@@ -1,7 +1,12 @@
-![recap.dev logo](logo.svg)
+<p align="center">
+  <a href="https://github.com/ArsenyYankovsky/recap.dev-server" target="_blank" align="center">
+    <img src="logo.svg">
+  </a>
+  <br />
+</p>
 
 
-[Docker Hub](https://hub.docker.com/orgs/recapdev/repositories) | [npm](https://www.npmjs.com/org/recap.dev)
+[![recap.dev Docker Hub](https://img.shields.io/badge/Docker%20Hub-recapdev%2Fserver-informational "recap.dev Docker Hub")](https://hub.docker.com/orgs/recapdev/repositories)
 
 
 recap.dev is an open-source cloud observability solution for modern serverless applications.
