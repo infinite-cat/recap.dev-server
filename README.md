@@ -41,6 +41,8 @@ The simplest way of starting the recap.dev server on AWS is to start an instance
 
 3. Click launch and search community AMIs for the latest recap.dev AMI
 
+Default UI port is **8081** and default tracing port is **8080** so make them available through a security group.
+
 ## Upgrading a recap.dev server or running a specific version
 
 recap.dev server is shipped as a docker image or as an AWS AMI.
@@ -49,7 +51,7 @@ If you're running a **docker image**, then just use the latest version of the im
 
 If you're running an **AWS AMI** version of recap.dev server then do the following:
 
-1. SSH into your recap.dev server
+1. SSH into your recap.dev server, default user is **ec2-user**
 
 2. `cd recap.dev` to go into recap.dev working directory
 
