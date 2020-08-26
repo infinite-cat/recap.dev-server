@@ -41,7 +41,7 @@ The simplest way of starting the recap.dev server on AWS is to start an instance
 
 3. Click launch and search community AMIs for the latest recap.dev AMI
 
-Default UI port is **8081** and default tracing port is **8080** so make them available through a security group.
+4. Default UI port is **8081** and default tracing port is **8080**. Make them available through a security group settings to your team and your applications.
 
 ## Upgrading a recap.dev server or running a specific version
 
