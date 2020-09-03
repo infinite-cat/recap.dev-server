@@ -1,21 +1,6 @@
 version: '3.0'
 
 services:
-  postgres:
-    container_name: postgres_container
-    image: postgres
-    environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'password'
-      PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
-    ports:
-      - "5432:5432"
-    networks:
-      - postgres
-    restart: unless-stopped
-
   recap_dev_server:
     build: .
     container_name: recap_dev_server
@@ -32,9 +17,6 @@ services:
       - postgres
     restart: unless-stopped
 
-networks:
-  postgres:
-    driver: bridge
-
-volumes:
-  postgres:
+  latest_postgres:
+    extends: build
+    image: recapdev/server:latest-postgres
