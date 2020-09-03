@@ -151,7 +151,9 @@ AWS integration allows pulling CloudWatch logs from your Lambdas.
                 "logs:StartQuery",
                 "logs:StopQuery",
                 "logs:TestMetricFilter",
-                "logs:FilterLogEvents"
+                "logs:FilterLogEvents",
+                "ce:getCostAndUsage",
+                "pricing:GetProducts"
             ],
             "Effect": "Allow",
             "Resource": "*"
