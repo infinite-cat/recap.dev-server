@@ -9,7 +9,7 @@
 [![recap.dev Docker Hub](https://img.shields.io/badge/Docker%20Hub-recapdev%2Fserver-informational "recap.dev Docker Hub")](https://hub.docker.com/repository/docker/recapdev/server)
 
 
-recap.dev is an open-source cloud observability solution for modern serverless applications.
+recap.dev is an open-source cloud observability and tracing solution for modern serverless applications.
 It includes resource access tracking, cost and error analytics, and more.
 
 Our goal is to make it easy and accessible for everyone to find sources of errors, find bottlenecks, and improve overall developer quality of life.
