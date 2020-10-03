@@ -1,15 +1,29 @@
-version: '3.0'
+version: '2.4'
 
 services:
+  postgres:
+    restart: unless-stopped
+    container_name: postgres_container
+    image: postgres:12
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'password'
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
   recap_dev_server:
-    build: .
     container_name: recap_dev_server
-    image: recapdev/server:0.5-postgres
+    image: recapdev/server:0.5.1
     environment:
       postgresHost: postgres
       postgresUsername: postgres
       postgresPassword: password
       postgresDatabase: postgres
+    mem_limit: 500m
     ports:
       - "8081:8081"
       - "8080:8080"
@@ -17,6 +31,8 @@ services:
       - postgres
     restart: unless-stopped
 
-  latest_postgres:
-    extends: build
-    image: recapdev/server:latest-postgres
+networks:
+  postgres:
+    driver: bridge
+volumes:
+  postgres:
