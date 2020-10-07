@@ -60,7 +60,6 @@ services:
       postgresDatabase: postgres
       UI_ENABLED: 'false'
       TRACING_API_ENABLED: 'false'
-      logLevel: 'debug'
     mem_limit: 256m
     networks:
       - postgres
