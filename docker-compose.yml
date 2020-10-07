@@ -15,18 +15,53 @@ services:
       - "5432:5432"
     networks:
       - postgres
-  recap_dev_server:
-    container_name: recap_dev_server
-    image: recapdev/server:0.5.1
+
+  recap_dev_ui_server:
+    container_name: recap_dev_ui_server
+    image: recapdev/server:0.5.4
     environment:
       postgresHost: postgres
       postgresUsername: postgres
       postgresPassword: password
       postgresDatabase: postgres
-    mem_limit: 500m
+      TRACING_API_ENABLED: 'false'
+      BACKGROUND_JOBS_ENABLED: 'false'
+    mem_limit: 256m
     ports:
       - "8081:8081"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  recap_dev_tracing_server:
+    container_name: recap_dev_tracing_server
+    image: recapdev/server:0.5.4
+    environment:
+      postgresHost: postgres
+      postgresUsername: postgres
+      postgresPassword: password
+      postgresDatabase: postgres
+      UI_ENABLED: 'false'
+      BACKGROUND_JOBS_ENABLED: 'false'
+    mem_limit: 256m
+    ports:
       - "8080:8080"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  recap_dev_jobs:
+    container_name: recap_dev_jobs
+    image: recapdev/server:0.5.4
+    environment:
+      postgresHost: postgres
+      postgresUsername: postgres
+      postgresPassword: password
+      postgresDatabase: postgres
+      UI_ENABLED: 'false'
+      TRACING_API_ENABLED: 'false'
+      logLevel: 'debug'
+    mem_limit: 256m
     networks:
       - postgres
     restart: unless-stopped
