@@ -1,0 +1,6 @@
+[submodule "build/recap.dev-ui"]
+	path = build/recap.dev-ui
+	url = git@github.com:infinite-cat/recap.dev-ui.git
+[submodule "build/recap.dev-backend"]
+	path = build/recap.dev-backend
+	url = git@github.com:infinite-cat/recap.dev-backend.git

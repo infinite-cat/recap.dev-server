@@ -1,6 +1,0 @@
-[submodule "recap.dev-ui"]
-	path = recap.dev-ui
-	url = git@github.com:ArsenyYankovsky/recap.dev-ui.git
-[submodule "recap.dev-backend"]
-	path = recap.dev-backend
-	url = git@github.com:ArsenyYankovsky/recap.dev-backend.git
