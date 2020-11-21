@@ -26,4 +26,4 @@ Hosting these tools on your servers is important so that the sensitive data neve
 
 ## recap.dev-server
 
-recap.dev-server repository holds scripts and docker compose templates to build and run the recap.dev server out of [backend](https://github.com/infinite-cat/recap.dev-backend) and [frontend](https://github.com/infinite-cat/recap.dev-ui) projects.
+**recap.dev-server** repository holds scripts and docker compose templates to build and run the recap.dev server out of [backend](https://github.com/infinite-cat/recap.dev-backend) and [frontend](https://github.com/infinite-cat/recap.dev-ui) projects.
