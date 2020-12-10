@@ -16,9 +16,20 @@ services:
     networks:
       - postgres
 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
+    networks:
+      - rabbitmq
+
   recap_dev_ui_server:
     container_name: recap_dev_ui_server
-    image: recapdev/server:0.5.6
+    image: recapdev/server:0.5.8
     environment:
       postgresHost: postgres
       postgresUsername: postgres
@@ -35,12 +46,13 @@ services:
 
   recap_dev_tracing_server:
     container_name: recap_dev_tracing_server
-    image: recapdev/server:0.5.6
+    image: recapdev/server:0.5.8
     environment:
       postgresHost: postgres
       postgresUsername: postgres
       postgresPassword: password
       postgresDatabase: postgres
+      QUEUE_URL: 'amqp://rabbitmq'
       UI_ENABLED: 'false'
       BACKGROUND_JOBS_ENABLED: 'false'
     mem_limit: 256m
@@ -48,25 +60,31 @@ services:
       - "8080:8080"
     networks:
       - postgres
+      - rabbitmq
     restart: unless-stopped
 
   recap_dev_jobs:
     container_name: recap_dev_jobs
-    image: recapdev/server:0.5.6
+    image: recapdev/server:0.5.8
     environment:
       postgresHost: postgres
       postgresUsername: postgres
       postgresPassword: password
       postgresDatabase: postgres
+      QUEUE_URL: 'amqp://rabbitmq'
       UI_ENABLED: 'false'
       TRACING_API_ENABLED: 'false'
     mem_limit: 256m
     networks:
       - postgres
+      - rabbitmq
     restart: unless-stopped
 
 networks:
   postgres:
     driver: bridge
+  rabbitmq:
+    driver: bridge
 volumes:
   postgres:
+  rabbitmq:
