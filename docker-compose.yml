@@ -42,6 +42,7 @@ services:
       - "8081:8081"
     networks:
       - postgres
+      - rabbitmq
     restart: unless-stopped
 
   recap_dev_tracing_server:
