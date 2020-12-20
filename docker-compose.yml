@@ -29,7 +29,7 @@ services:
 
   recap_dev_ui_server:
     container_name: recap_dev_ui_server
-    image: recapdev/server:0.5.9
+    image: recapdev/server:0.6.0
     environment:
       postgresHost: postgres
       postgresUsername: postgres
@@ -46,7 +46,7 @@ services:
 
   recap_dev_tracing_server:
     container_name: recap_dev_tracing_server
-    image: recapdev/server:0.5.9
+    image: recapdev/server:0.6.0
     environment:
       postgresHost: postgres
       postgresUsername: postgres
@@ -65,7 +65,7 @@ services:
 
   recap_dev_jobs:
     container_name: recap_dev_jobs
-    image: recapdev/server:0.5.9
+    image: recapdev/server:0.6.0
     environment:
       postgresHost: postgres
       postgresUsername: postgres
@@ -75,7 +75,8 @@ services:
       UI_ENABLED: 'false'
       TRACING_API_ENABLED: 'false'
       TRACE_PROCESSING_BATCH_SIZE: 100
-    mem_limit: 256m
+      NODE_OPTIONS: --max-old-space-size=512
+    mem_limit: 512m
     networks:
       - postgres
       - rabbitmq
