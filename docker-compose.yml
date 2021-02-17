@@ -30,7 +30,7 @@ services:
 
   recap_dev_ui_server:
     container_name: recap_dev_ui_server
-    image: recapdev/server:0.6.1
+    image: recapdev/server:0.6.2
     environment:
       postgresHost: postgres
       postgresUsername: postgres
@@ -48,7 +48,7 @@ services:
 
   recap_dev_tracing_server:
     container_name: recap_dev_tracing_server
-    image: recapdev/server:0.6.1
+    image: recapdev/server:0.6.2
     environment:
       postgresHost: postgres
       postgresUsername: postgres
@@ -67,7 +67,7 @@ services:
 
   recap_dev_jobs:
     container_name: recap_dev_jobs
-    image: recapdev/server:0.6.1
+    image: recapdev/server:0.6.2
     environment:
       postgresHost: postgres
       postgresUsername: postgres
